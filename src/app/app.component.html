@@ -1,0 +1,15 @@
+<!--Capitulo 5: Del Paso 4: Integramos el coentenido de app.component.html-->
+<!--Muestra un encabezado con el contenido de la variable-->
+<h1>{{title}}</h1><!--title probablemente se define en el componente que utiliza esta plantilla y se muestra dinámicamente en el encabezado.-->
+<nav> <!--Define una sección de navegación que contiene enlaces a otras vistas de la aplicación.-->
+  <!--Este enlace se utiliza para navegar a la vista "Dashboard" de la aplicación. El atributo routerLink indica la ruta a la que se redirigirá cuando se hace clic en el enlace.-->
+  <a routerLink="/dashboard">Dashboard</a>
+  <!--Este enlace se utiliza para navegar a la vista "Heroes" de la aplicación. Al igual que el enlace anterior, el atributo routerLink especifica la ruta de destino.-->
+  <a routerLink="/heroes">Heroes</a>
+</nav> 
+<!--Cuando se navega a diferentes rutas, el contenido de la vista correspondiente se mostrará en este 
+  marcador de posición. En otras palabras, aquí se renderizará dinámicamente el contenido de las vistas 
+  de "Dashboard" o "Heroes", según la ruta seleccionada.-->
+<router-outlet></router-outlet><!--Esto es una directiva que actúa como un marcador de posición.-->
+<!--Se incluye el componente app-messages, que probablemente se utiliza para mostrar mensajes y notificaciones en la aplicación. -->
+<app-messages></app-messages>

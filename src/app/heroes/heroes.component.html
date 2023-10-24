@@ -1,0 +1,14 @@
+<!--Capitulo 5: Del Paso 9: INgresamos el Contenido de heroes.component.html-->
+<h2>My Heroes</h2><!-- 1. Muestra un encabezado "My Heroes" en la vista, indicando que se trata de la lista de héroes del usuario.-->
+<ul class="heroes"><!-- 2.Define una lista desordenada (ul) con la clase CSS "heroes". Esta lista se utilizará para mostrar la lista de héroes.-->
+  <!-- 3. Utiliza una directiva *ngFor para iterar a través de la matriz de héroes heroes y generar elementos de lista (li) para cada héroe.-->
+  <li *ngFor="let hero of heroes">
+    <!-- 4.Crea un enlace (<a>) que se utiliza para navegar a la vista de detalles de un héroe específico. El atributo routerLink se utiliza para definir la ruta de destino, que incluye el id del héroe en la URL-->
+    <a routerLink="/detail/{{hero.id}}">
+      <!--Cuando el usuario hace clic en el enlace, se redirige a la vista de detalles del héroe correspondiente.-->
+      <!--Muestra un "badge" (etiqueta) que contiene el id del héroe. Esto se muestra junto al nombre
+      del héroe en la lista. {{hero.name}}: Muestra el nombre del héroe como texto en la lista.-->
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+  </li>
+</ul>

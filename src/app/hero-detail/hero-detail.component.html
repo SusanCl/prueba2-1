@@ -1,0 +1,18 @@
+<!--Capitulo 5: Del Paso 12: Integramos contenido de hero-detail.component.html-->
+<!-- 1. Esto condiciona la visualización de todo el contenido dentro del div en función de si existe un objeto héroe (hero). Si hay un héroe, se muestra el contenido dentro del div.-->
+<div *ngIf="hero">
+  <!-- 2. Muestra el nombre del héroe en un encabezado (h2) y utiliza el filtro uppercase para convertir el nombre en mayúsculas.-->
+    <h2>{{hero.name | uppercase}}</h2>
+    <!--Muestra el ID del héroe. <div>: Abre un nuevo div que contiene un formulario para editar el nombre del héroe.-->
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+      <!-- 3. Muestra una etiqueta de formulario para el campo de entrada de nombre.-->
+      <label for="hero-name">Hero name: </label>
+      <!--Crea un campo de entrada de texto para editar el nombre del héroe. Utiliza la directiva ngModel para enlazar el valor del campo de entrada al atributo name del objeto héroe-->
+      <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name"/> 
+      <!--El atributo placeholder proporciona un marcador de posición para el campo de entrada.-->
+    </div>
+    <!-- 4.Agrega un botón "go back" que, cuando se hace clic, ejecuta el método goBack() en el componente.-->
+    <button type="button" (click)="goBack()">go back</button>
+    <!--Este método podría utilizarse para navegar hacia atrás en la aplicación o realizar alguna acción específica cuando el usuario haga clic en el botón.-->
+  </div>

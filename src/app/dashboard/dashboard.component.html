@@ -1,0 +1,13 @@
+<!--Capitulo 5: Del Paso 6: Integramos el contenido de dashboard.component.html-->
+<h2>Top Heroes</h2><!--1.Esto muestra un encabezado "Top Heroes" en la vista, indicando que se trata de una lista de los héroes principales.-->
+<!--2.Define un contenedor o sección que se utiliza para mostrar una lista de enlaces a los detalles de los héroes.-->
+<div class="heroes-menu">
+  <!--3.Aquí se utiliza una directiva *ngFor para iterar a través de una lista de héroes y generar enlaces dinámicos para cada uno de ellos.-->
+  <a *ngFor="let hero of heroes"
+    routerLink="/detail/{{hero.id}}">
+    {{hero.name}}
+    <!--4.*ngFor="let hero of heroes": Esto establece un bucle ngFor que itera a través de la matriz heroes y crea un enlace para cada héroe.
+    routerLink="/detail/{{hero.id}}": El atributo routerLink se utiliza para definir la ruta a la que se redirigirá cuando se haga clic en el enlace. En este caso, se crea una ruta dinámica que incluye el id del héroe en la URL.
+    Muestra el nombre del héroe como texto visible en el enlace.-->
+  </a>
+</div>
